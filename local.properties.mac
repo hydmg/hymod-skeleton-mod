@@ -1,5 +1,3 @@
 # Mac Hytale Installation Path
 # Rename this file to local.properties to use it.
-hytaleHome=/Applications/Hytale
-# Or if using User Library:
-# hytaleHome=/Users/YOUR_USERNAME/Library/Application Support/Hytale
+hytaleHome=/Users/YOUR_USERNAME/Library/Application Support/Hytale

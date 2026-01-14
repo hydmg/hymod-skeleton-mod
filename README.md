@@ -1,46 +1,44 @@
 # Hytale Mod Skeleton
 
-A clean, generic starting point for creating Hytale server-side mods.
+A basic skeleton for creating Hytale mods.
 
-## Project Structure
+## Usage
 
-- `src/main/java/com/example/skeleton/Main.java`: The main entry point of the mod.
-- `build.gradle`: Gradle build configuration with dynamic Hytale path resolution.
+This project is a template. Before starting, you need to configure it by replacing the placeholders.
 
-## Setup & Configuration
+### Quick Start
 
-This project requires the Hytale client to be installed so it can reference the `HytaleServer.jar`.
+Run the included setup script to automatically configure your mod:
 
-### 1. Configure Hytale Path
+```bash
+./setup.sh
+```
 
-The build script tries to automatically detect your Hytale installation. However, for a consistent environment, it is recommended to explicitly set the path using a `local.properties` file.
+Follow the interactive prompts to enter your mod details.
 
-We have provided templates for common operating systems. **Rename the file matching your OS to `local.properties`**:
+### Manual Configuration
 
-*   **Windows**: Rename `local.properties.windows` -> `local.properties`
-*   **Mac**: Rename `local.properties.mac` -> `local.properties`
-*   **Linux**: Rename `local.properties.linux` -> `local.properties`
+If you prefer to configure it manually, replace the following placeholders in the project files:
 
-*Note: `local.properties` is git-ignored so your local path won't be committed.*
+| Placeholder | Description | File(s) |
+| :--- | :--- | :--- |
+| `<MOD_NAME>` | The human-readable name of your mod (e.g., "My Mod"). | `gradle.properties`, `manifest.json` |
+| `<MOD_ID>` | The unique ID of your mod (e.g., "mymod"). | `settings.gradle` |
+| `<GROUP_ID>` | The Maven group ID (e.g., "com.example"). | `gradle.properties`, `manifest.json` |
+| `<VERSION>` | The initial version of your mod (e.g., "1.0.0"). | `gradle.properties`, `manifest.json` |
+| `<DESCRIPTION>` | A brief description of your mod. | `manifest.json` |
+| `<AUTHOR>` | The author's name. | `manifest.json` |
+| `<MAIN_CLASS>` | The fully qualified name of your main class (e.g., "com.example.mymod.Main"). | `build.gradle`, `manifest.json` |
+| `<PACKAGE>` | The package name for your Java sources (e.g., "com.example.mymod"). | `Main.java` |
+
+### Important Note
+
+After configuration, make sure to move `src/main/java/com/example/skeleton/Main.java` to the correct directory matching your new package name.
 
 ## Building
 
-To build the mod, open a terminal in the project directory and run:
+Once configured, you can build the mod using Gradle:
 
-### Windows
-```cmd
-gradlew build
-```
-
-### Mac / Linux
 ```bash
 ./gradlew build
 ```
-
-The compiled mod JAR will be generated in `build/libs/`.
-
-## Running
-This is a server-side mod. To use it:
-1.  Copy the generated JAR from `build/libs/` to your Hytale server's `mods` folder.
-2.  Start the Hytale Server.
-3.  You should see "Hello, Hytale!" printed in the server console logs.
