@@ -1,0 +1,20 @@
+{
+  "Group": "example",
+  "Name": "SkeletonMod",
+  "Version": "1.0.0",
+  "Description": "A skeleton Hytale mod.",
+  "Authors": [
+    {
+      "Name": "Author"
+    }
+  ],
+  "Website": "",
+  "ServerVersion": "*",
+  "Dependencies": {},
+  "OptionalDependencies": {
+
+  },
+  "DisabledByDefault": false,
+  "Main": "com.example.skeleton.Main",
+  "IncludesAssetPack": false
+}
