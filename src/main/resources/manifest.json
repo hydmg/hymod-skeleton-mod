@@ -1,11 +1,11 @@
 {
-  "Group": "example",
-  "Name": "SkeletonMod",
-  "Version": "1.0.0",
-  "Description": "A skeleton Hytale mod.",
+  "Group": "<GROUP_ID>",
+  "Name": "<MOD_NAME>",
+  "Version": "<VERSION>",
+  "Description": "<DESCRIPTION>",
   "Authors": [
     {
-      "Name": "Author"
+      "Name": "<AUTHOR>"
     }
   ],
   "Website": "",
@@ -15,6 +15,6 @@
 
   },
   "DisabledByDefault": false,
-  "Main": "com.example.skeleton.Main",
+  "Main": "<MAIN_CLASS>",
   "IncludesAssetPack": false
 }

@@ -1,4 +1,4 @@
-package com.example.skeleton;
+package <PACKAGE>;
 
 public class Main {
     public Main() {

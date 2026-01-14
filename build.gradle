@@ -39,7 +39,7 @@ idea {
         settings {
             runConfigurations {
                 'HytaleServer'(org.jetbrains.gradle.ext.Application) {
-                    mainClass = 'com.example.skeleton.Main'
+                    mainClass = '<MAIN_CLASS>'
                     moduleName = project.idea.module.name + '.main'
                     programParameters = "--allow-op --disable-sentry --assets=${file("$hytaleHome/$patchline/package/game/latest/Assets.zip").absolutePath} --mods=${file("src/main/").absolutePath} --auth-mode=authenticated"
                     workingDirectory = serverRunDir.absolutePath
