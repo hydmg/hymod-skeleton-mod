@@ -30,6 +30,7 @@ If you prefer to configure it manually, replace the following placeholders in th
 | `<AUTHOR>` | The author's name. | `manifest.json` |
 | `<MAIN_CLASS>` | The fully qualified name of your main class (e.g., "com.example.mymod.Main"). | `build.gradle`, `manifest.json` |
 | `<PACKAGE>` | The package name for your Java sources (e.g., "com.example.mymod"). | `Main.java` |
+| `<USERNAME>` | The system username for the Hytale installation path. | `local.properties.*` |
 
 ### Important Note
 

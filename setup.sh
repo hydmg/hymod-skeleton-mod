@@ -44,6 +44,9 @@ prompt "Enter Main Class Name" "Main" MAIN_CLASS_SIMPLE
 
 MAIN_CLASS="$PACKAGE.$MAIN_CLASS_SIMPLE"
 
+# Prompt for Device Username for local.properties
+prompt "Enter Device Username (for Hytale path)" "$(whoami)" DEVICE_USERNAME
+
 echo ""
 echo "------------------------------------------------"
 echo "Configuration summary:"
@@ -55,6 +58,7 @@ echo "Description: $DESCRIPTION"
 echo "Author:      $AUTHOR"
 echo "Package:     $PACKAGE"
 echo "Main Class:  $MAIN_CLASS"
+echo "Username:    $DEVICE_USERNAME"
 echo "------------------------------------------------"
 echo ""
 
@@ -134,5 +138,23 @@ if [ -f "$CURRENT_MAIN_JAVA" ]; then
 else
     echo "Warning: Could not find $CURRENT_MAIN_JAVA. Skipping Java file update."
 fi
+
+# 6. Setup local.properties
+echo "Setting up local.properties..."
+OS_TYPE=$(uname)
+if [[ "$OS_TYPE" == "Darwin" ]]; then
+    cp local.properties.mac local.properties
+elif [[ "$OS_TYPE" == "Linux" ]]; then
+    cp local.properties.linux local.properties
+elif [[ "$OS_TYPE" == "CYGWIN"* || "$OS_TYPE" == "MINGW"* ]]; then
+    cp local.properties.windows local.properties
+    echo "Windows detected. Please verify local.properties paths manually if needed."
+else
+    # Fallback/Default
+    echo "Could not detect OS. Using Mac template as default."
+    cp local.properties.mac local.properties
+fi
+
+sedi "s/<USERNAME>/$DEVICE_USERNAME/g" local.properties
 
 echo "Setup complete! You can now run './gradlew build' to build your mod."
