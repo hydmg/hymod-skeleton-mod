@@ -1,5 +1,3 @@
 # Windows Hytale Installation Path
 # Rename this file to local.properties to use it.
-hytaleHome=C\:\\Program Files (x86)\\Hytale
-# Or if using AppData:
-# hytaleHome=${env.LOCALAPPDATA}\\Hytale
+hytaleHome=C:/Users/YOUR_USER/AppData/Local/Hytale
